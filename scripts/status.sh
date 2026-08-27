@@ -2,16 +2,16 @@
 # status.sh — просмотр и управление статусом рецензий
 #
 # Использование:
-#   ./scripts/status.sh                                    — таблица всех уроков
-#   ./scripts/status.sh detail <файл>                     — история рецензий файла
-#   ./scripts/status.sh set <файл> <decision> [note]      — выставить решение
+#   ./scripts/status.sh                              — таблица всех параграфов
+#   ./scripts/status.sh detail <файл>               — история рецензий файла
+#   ./scripts/status.sh set <файл> <decision> [note] — выставить решение
 #
 # decision: approved | needs_revision | skip
 #
 # Примеры:
 #   ./scripts/status.sh
-#   ./scripts/status.sh detail course/lesson-01/README.md
-#   ./scripts/status.sh set course/lesson-01/README.md approved "Готово к публикации"
+#   ./scripts/status.sh detail chapters/04_patterny/04-02_poisk_elementa.md
+#   ./scripts/status.sh set chapters/04_patterny/04-02_poisk_elementa.md approved "Всё хорошо"
 
 set -euo pipefail
 
@@ -37,11 +37,12 @@ decision_arg = os.environ["DECISION_ARG"]
 note_arg     = os.environ["NOTE_ARG"]
 
 status_path  = root_dir / "docs" / "review-status.json"
-course_dir   = root_dir / "course"
+chapters_dir = root_dir / "chapters"
 
 # --- ANSI цвета ---
 GREEN  = "\x1b[32m"
 YELLOW = "\x1b[33m"
+RED    = "\x1b[31m"
 GRAY   = "\x1b[90m"
 BOLD   = "\x1b[1m"
 RESET  = "\x1b[0m"
@@ -58,8 +59,8 @@ def ljust_visible(s, width):
 # --- Загрузить статус ---
 status = json.loads(status_path.read_text()) if status_path.exists() else {}
 
-# --- Собрать все файлы уроков из course/ ---
-all_chapters = sorted(course_dir.rglob("*.md"))
+# --- Собрать все параграфы из chapters/ ---
+all_chapters = sorted(chapters_dir.rglob("*.md"))
 
 def decision_cell(entry):
     d = entry.get("decision", "")
@@ -79,7 +80,7 @@ def reviewed_cell(entry):
 
 # =====================================================================
 if mode == "table":
-    col_file     = 45
+    col_file     = 55
     col_reviewed = 12
     col_decision = 14
 
@@ -106,9 +107,9 @@ if mode == "table":
         key = str(rel)
         entry = status.get(key, {})
 
-        file_cell    = str(rel)
-        reviewed_str = reviewed_cell(entry)
-        decision_str = decision_cell(entry)
+        file_cell     = str(rel)
+        reviewed_str  = reviewed_cell(entry)
+        decision_str  = decision_cell(entry)
 
         print(
             ljust_visible(file_cell, col_file)
@@ -162,11 +163,12 @@ elif mode == "set":
 
     entry = status.get(key, {})
     entry["decision"] = decision_arg
-    entry["decision_date"] = date.today().isoformat()
     if note_arg:
         entry["decision_note"] = note_arg
+        entry["decision_date"] = date.today().isoformat()
     elif "decision_note" in entry:
         del entry["decision_note"]
+    entry["decision_date"] = date.today().isoformat()
     status[key] = entry
 
     status_path.write_text(json.dumps(status, ensure_ascii=False, indent=2))

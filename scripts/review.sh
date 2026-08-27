@@ -9,12 +9,12 @@
 #
 # Примеры:
 #   ./scripts/review.sh course/lesson-01/README.md
-#   ./scripts/review.sh course/lesson-02/questions.md gpt-5.5
+#   ./scripts/review.sh chapters/02_heshirovanie/02-02_kontrolnye-voprosy.md gpt-5.5
 #   ./scripts/review.sh docs/glossary.md deepseek-v4-pro
 #   ./scripts/review.sh configuration/README.md gpt-5.5
 #
 # Промпт выбирается автоматически по имени файла:
-#   questions.md / answers.md  → reviewer-qa.md
+#   *_kontrolnye-voprosy.md / *_otvety.md  → reviewer-qa.md
 #   docs/* / configuration/*   → reviewer-docs.md
 #   всё остальное              → reviewer.md  (урок)
 #
@@ -95,9 +95,9 @@ else:
 # --- Автовыбор промпта по имени/расположению файла ---
 fname = chapter_file.name
 rel_to_root = chapter_file.relative_to(root_dir)
-parts = rel_to_root.parts  # e.g. ('course','lesson-01','questions.md') or ('docs','glossary.md')
+parts = rel_to_root.parts  # ('chapters','01_zachem...','01-02_kontrolnye-voprosy.md') | ('docs','glossary.md')
 
-if fname in ("questions.md", "answers.md"):
+if fname.endswith(("_kontrolnye-voprosy.md", "_otvety.md")):
     prompt_name = "reviewer-qa.md"
 elif parts[0] in ("docs", "configuration"):
     prompt_name = "reviewer-docs.md"
@@ -147,12 +147,12 @@ tokens      = result.get("usage", {})
 # --- Путь для сохранения рецензии ---
 today      = date.today().isoformat()
 model_short = re.sub(r"[^a-z0-9\-]", "", model_used.lower())[:20]
-stem       = chapter_file.stem  # e.g. "questions", "README", "glossary"
+stem       = chapter_file.stem  # "01-02_kontrolnye-voprosy", "glossary"
 
 # Определяем папку рецензии по расположению файла
-if parts[0] == "course":
-    # course/lesson-NN/file.md → reviews/lesson-NN/
-    lesson_dir = parts[1]  # lesson-NN
+if parts[0] == "chapters":
+    # chapters/NN_slug/file.md → reviews/NN_slug/
+    lesson_dir = parts[1]  # NN_slug
     out_dir = root_dir / "reviews" / lesson_dir
     chapter_key = str(rel_to_root)
 elif parts[0] == "docs":
