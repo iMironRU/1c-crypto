@@ -2,50 +2,50 @@
 
 - [О книге](README.md)
 
-## Урок 01. Зачем это нужно разработчику 1С
+## Урок 1. Зачем это нужно разработчику 1С
 
-- [Зачем это знать](chapters/01_zachem-nuzhna-kriptografiya/01-01_urok.md)
-- [Контрольные вопросы](chapters/01_zachem-nuzhna-kriptografiya/01-02_kontrolnye-voprosy.md)
-- [Ответы](chapters/01_zachem-nuzhna-kriptografiya/01-03_otvety.md)
+- [§ 1.1. Зачем это нужно разработчику 1С](chapters/01_zachem-nuzhna-kriptografiya/01-01_urok.md)
+- [§ 1.2. Контрольные вопросы](chapters/01_zachem-nuzhna-kriptografiya/01-02_kontrolnye-voprosy.md)
+- [§ 1.3. Ответы](chapters/01_zachem-nuzhna-kriptografiya/01-03_otvety.md)
 
-## Урок 02. Хеширование: необратимый отпечаток
+## Урок 2. Хеширование: необратимый отпечаток
 
-- [Зачем это знать](chapters/02_heshirovanie/02-01_urok.md)
-- [Контрольные вопросы](chapters/02_heshirovanie/02-02_kontrolnye-voprosy.md)
-- [Ответы](chapters/02_heshirovanie/02-03_otvety.md)
+- [§ 2.1. Хеширование: необратимый отпечаток](chapters/02_heshirovanie/02-01_urok.md)
+- [§ 2.2. Контрольные вопросы](chapters/02_heshirovanie/02-02_kontrolnye-voprosy.md)
+- [§ 2.3. Ответы](chapters/02_heshirovanie/02-03_otvety.md)
 
-## Урок 03. Хранение паролей: почему не шифрование
+## Урок 3. Хранение паролей: почему не шифрование
 
-- [Зачем это знать](chapters/03_hranenie-parolej/03-01_urok.md)
-- [Контрольные вопросы](chapters/03_hranenie-parolej/03-02_kontrolnye-voprosy.md)
-- [Ответы](chapters/03_hranenie-parolej/03-03_otvety.md)
+- [§ 3.1. Хранение паролей: почему не шифрование](chapters/03_hranenie-parolej/03-01_urok.md)
+- [§ 3.2. Контрольные вопросы](chapters/03_hranenie-parolej/03-02_kontrolnye-voprosy.md)
+- [§ 3.3. Ответы](chapters/03_hranenie-parolej/03-03_otvety.md)
 
-## Урок 04. Ключи, сертификаты, криптопровайдеры
+## Урок 4. Ключи, сертификаты, криптопровайдеры
 
-- [Зачем это знать](chapters/04_klyuchi-sertifikaty-provajdery/04-01_urok.md)
-- [Контрольные вопросы](chapters/04_klyuchi-sertifikaty-provajdery/04-02_kontrolnye-voprosy.md)
-- [Ответы](chapters/04_klyuchi-sertifikaty-provajdery/04-03_otvety.md)
+- [§ 4.1. Ключи, сертификаты, криптопровайдеры](chapters/04_klyuchi-sertifikaty-provajdery/04-01_urok.md)
+- [§ 4.2. Контрольные вопросы](chapters/04_klyuchi-sertifikaty-provajdery/04-02_kontrolnye-voprosy.md)
+- [§ 4.3. Ответы](chapters/04_klyuchi-sertifikaty-provajdery/04-03_otvety.md)
 
-## Урок 05. Шифрование: сейф для данных
+## Урок 5. Шифрование: сейф для данных
 
-- [Зачем это знать](chapters/05_shifrovanie/05-01_urok.md)
-- [Контрольные вопросы](chapters/05_shifrovanie/05-02_kontrolnye-voprosy.md)
-- [Ответы](chapters/05_shifrovanie/05-03_otvety.md)
+- [§ 5.1. Шифрование: сейф для данных](chapters/05_shifrovanie/05-01_urok.md)
+- [§ 5.2. Контрольные вопросы](chapters/05_shifrovanie/05-02_kontrolnye-voprosy.md)
+- [§ 5.3. Ответы](chapters/05_shifrovanie/05-03_otvety.md)
 
-## Урок 06. Электронная подпись: цифровая печать
+## Урок 6. Электронная подпись: цифровая печать
 
-- [Зачем это знать](chapters/06_elektronnaya-podpis/06-01_urok.md)
-- [Контрольные вопросы](chapters/06_elektronnaya-podpis/06-02_kontrolnye-voprosy.md)
-- [Ответы](chapters/06_elektronnaya-podpis/06-03_otvety.md)
+- [§ 6.1. Электронная подпись: цифровая печать](chapters/06_elektronnaya-podpis/06-01_urok.md)
+- [§ 6.2. Контрольные вопросы](chapters/06_elektronnaya-podpis/06-02_kontrolnye-voprosy.md)
+- [§ 6.3. Ответы](chapters/06_elektronnaya-podpis/06-03_otvety.md)
 
-## Урок 07. Криптография в реальных задачах
+## Урок 7. Криптография в реальных задачах
 
-- [Зачем это знать](chapters/07_realnye-zadachi/07-01_urok.md)
-- [Контрольные вопросы](chapters/07_realnye-zadachi/07-02_kontrolnye-voprosy.md)
-- [Ответы](chapters/07_realnye-zadachi/07-03_otvety.md)
+- [§ 7.1. Криптография в реальных задачах](chapters/07_realnye-zadachi/07-01_urok.md)
+- [§ 7.2. Контрольные вопросы](chapters/07_realnye-zadachi/07-02_kontrolnye-voprosy.md)
+- [§ 7.3. Ответы](chapters/07_realnye-zadachi/07-03_otvety.md)
 
-## Урок 08. Диагностика: когда что-то пошло не так
+## Урок 8. Диагностика: когда что-то пошло не так
 
-- [Зачем это знать](chapters/08_diagnostika/08-01_urok.md)
-- [Контрольные вопросы](chapters/08_diagnostika/08-02_kontrolnye-voprosy.md)
-- [Ответы](chapters/08_diagnostika/08-03_otvety.md)
+- [§ 8.1. Диагностика: когда что-то пошло не так](chapters/08_diagnostika/08-01_urok.md)
+- [§ 8.2. Контрольные вопросы](chapters/08_diagnostika/08-02_kontrolnye-voprosy.md)
+- [§ 8.3. Ответы](chapters/08_diagnostika/08-03_otvety.md)
